@@ -106,8 +106,8 @@ functions:
             schema:
               "application/json": ${file(models/create-todo-model.json)} 
           documentation:
-            summary: "update a Todo"
-            description: "update an existing Todo item"
+            summary: "Update a Todo"
+            description: "Update an existing Todo item"
             tags:
               - Todo
               - Update
@@ -245,6 +245,5 @@ resources:
               Action: 
                 - 's3:GetObject'
                 - 's3:PutObject'
-                - '*'
               Resource: 'arn:aws:s3:::${self:provider.environment.ATTACHMENT_S3_BUCKET}/*'
         Bucket: !Ref AttachmentsBucket 
