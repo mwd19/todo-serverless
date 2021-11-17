@@ -37,7 +37,7 @@ export class TodosAccess {
             Item: todoItem
         }).promise()
 
-        logger.info('New todo created: ', { todoItem })
+        logger.info(`New todo item created: ${ todoItem }`)
 
         return todoItem
     }
@@ -62,7 +62,7 @@ export class TodosAccess {
             },
             ReturnValues: "UPDATED_NEW"
         }).promise()
-        logger.info("Todo item id: was updated", { todoId })
+        logger.info(`Todo item id: ${ todoId } was updated`)
         return todoUpdate
     }
 
@@ -76,7 +76,7 @@ export class TodosAccess {
             ReturnValues: 'ALL_OLD'
         }).promise()
 
-        logger.info('Todo item id: was deleted', { todoId })
+        logger.info(`Todo item id: ${ todoId } was deleted`)
     }
 
     async updateAttachmentUrl(attachmentUrl: string, todoId: string, userId: string) {
