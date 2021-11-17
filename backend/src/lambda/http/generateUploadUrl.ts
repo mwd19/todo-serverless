@@ -9,7 +9,7 @@ import { getUserId } from '../utils'
 
 import { createLogger } from '../../utils/logger'
 
-const logger = createLogger('generate upload url')
+const logger = createLogger('Generate upload Url')
 
 export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -28,7 +28,7 @@ export const handler = middy(
 
     const attachementUrl = await createAttachmentPresignedUrl(todoId, userId)
 
-    logger.info('created url: ', { attachementUrl })
+    logger.info('Created url: ', { attachementUrl })
 
     return {
       statusCode: 201,
