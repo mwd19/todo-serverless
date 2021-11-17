@@ -1,6 +1,6 @@
 ## TODO: Change the name of the org 
-# org: wano19
-# app: serverless-todo-app
+org: wano19
+app: serverless-todo-app
 service: serverless-todo-app
 
 plugins:
