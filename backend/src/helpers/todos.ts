@@ -9,6 +9,7 @@ import * as uuid from 'uuid'
 
 // TODO: Implement businessLogic
 
+// Instantiate data layer objects
 const todosAcess = new TodosAccess()
 const attachmentUtils = new AttachmentUtils()
 
@@ -35,22 +36,22 @@ export async function createTodo(createTodoRequest: CreateTodoRequest, userId: s
         done: false
     }
 
-    logger.info('Creating todo with id: ', todoId)
+    logger.info('Creating todo: ', todoId)
     return await todosAcess.createTodo(todoItem)
 }
 
 export async function updateTodo(updateTodoRequest: UpdateTodoRequest, todoId: string, userId: string,) {
-    logger.info('updating todo with id: ', todoId)
+    logger.info('Updating todo: ', todoId)
     return await todosAcess.updateTodo(todoId, userId, updateTodoRequest)
 }
 
 export async function deleteTodo(todoId: string, userId: string) {
-    logger.info('deleting todo with id: ', todoId)
+    logger.info('Deleting todo: ', todoId)
     return await todosAcess.deleteTodo(todoId, userId)
 }
 
 export async function createAttachmentPresignedUrl(todoId: string, userId) {
-    logger.info('creating image url for todo: ', {todoId})
+    logger.info('Creating image url for todo: ', {todoId})
     const attachement_url = attachmentUtils.createAttachmentPresignedUrl(todoId)
     return await todosAcess.updateAttachmentUrl(attachement_url, todoId, userId)
 }
