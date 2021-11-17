@@ -110,7 +110,6 @@ functions:
             description: Create a new Todo item
             requestModels:
               'application/json': CreateTodo
-
     iamRoleStatements:
       - Effect: Allow
         Action:
@@ -152,7 +151,6 @@ functions:
           path: todos/{todoId}
           cors: true
           authorizer: Auth
-
     iamRoleStatements:
       - Effect: Allow
         Action:  
@@ -206,8 +204,7 @@ resources:
           - AttributeName: todoId
             AttributeType: S
           - AttributeName: createdAt
-            AttributeType: S            
-      
+            AttributeType: S              
         KeySchema:
           - AttributeName: userId
             KeyType: HASH
