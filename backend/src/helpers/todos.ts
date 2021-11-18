@@ -7,8 +7,6 @@ import { createLogger } from '../utils/logger'
 import * as uuid from 'uuid'
 // import * as createError from 'http-errors'
 
-// TODO: Implement businessLogic
-
 // Instantiate data layer objects
 const todosAcess = new TodosAccess()
 const attachmentUtils = new AttachmentUtils()
